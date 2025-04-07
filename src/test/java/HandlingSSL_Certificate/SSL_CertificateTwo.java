@@ -1,7 +1,5 @@
 package HandlingSSL_Certificate;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,8 +7,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SSL_Certificate {
-
+public class SSL_CertificateTwo {
 	WebDriver driver;
 
 	@BeforeClass
@@ -25,7 +22,7 @@ public class SSL_Certificate {
 
 	@Test
 	public void sslCertificate() {
-		driver.get("https://expired.badssl.com/");
+		driver.get(" https://wrong.host.badssl.com/");
 		driver.manage().window().maximize();
 		
 		System.out.println("Driver of the page: "+driver.getTitle());
@@ -35,5 +32,4 @@ public class SSL_Certificate {
 	public void tearDown() {
 		driver.quit();
 	}
-
 }
