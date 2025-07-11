@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class RunTestInIncognito {
+public class RunTestInIncognito_One {
 
 	public static void main(String[] args) {
 		// Creating Chrome Options
@@ -17,7 +17,6 @@ public class RunTestInIncognito {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.youtube.com/");
 		driver.manage().window().maximize();
-
 	}
 
 }
