@@ -7,31 +7,29 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SSL_CertificateOne {
-
+public class SSl_CertificateFour {
+	
 	WebDriver driver;
-
+	
 	@BeforeClass
 	public void setUp() {
-
-		// Creating Chrome Options
-		ChromeOptions opt = new ChromeOptions();
-		opt.setAcceptInsecureCerts(true);
-		// Initiate ChromeDriver
-		driver = new ChromeDriver(opt);
+		// Initialize ChromeOptions
+		ChromeOptions cop = new ChromeOptions();
+		cop.setAcceptInsecureCerts(true);
+		// WebDriver
+		driver = new ChromeDriver(cop);
 	}
-
+	
 	@Test
-	public void sslCertificate() {
-		driver.get("https://expired.badssl.com/");
+	public void handlingSSL() {
+		driver.get("https://self-signed.badssl.com/");
 		driver.manage().window().maximize();
 		
-		System.out.println("Driver of the page: "+driver.getTitle());
+		System.out.println("Title of the page : "+driver.getTitle());
 	}
-
-	@AfterClass()
+	
+	@AfterClass
 	public void tearDown() {
 		driver.quit();
 	}
-
 }
